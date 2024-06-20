@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gerador de QR Code PIX</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+                <div class="main">
+                    <form method="post" action="generator.php">
+                        <h3>Gerador QR Code PIX e Copia e Cola</h3>
+                        <h4>Dados do PIX</h4>
+
+                        <label>Tipo da Chave</label>
+                        <input type="radio" id="keyType" name="keytype" value="1"> Telefone
+                        <input type="radio" id="keyType" name="keytype" value="2"> E-mail
+                        <input type="radio" id="keyType" name="keytype" value="3"> CPF
+                        <input type="radio" id="keyType" name="keytype" value="4"> CNPJ
+                        <input type="radio" id="keyType" name="keytype" value="5"> Alfanumérico
+
+                        <label for="nameTransfer"> Nome do Beneficiário (até 25 letras)</label>
+                        <input type="text" id="nameTransfer" name="nameTransfer">
+
+                        <label for="cityTransfer"> Cidade (Até 15 letras)</label>
+                        <input type="text" id="cityTransfer" name="cityTransfer">
+
+                        <label for="valueTranfer"> Valor (opcional)</label>
+                        <input type="text" id="valueTranfer" name="valueTranfer">
+
+                        <label for="id"> Identificador (opcional)</label>
+                        <input type="text" id="idTransfer" name="idTransfer">
+
+                        <button type="submit"> Gerar Pix </button>
+                    </form>
+                </div>
+        </div>
+    </body>
+</html>
