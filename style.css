@@ -1,30 +1,52 @@
 *{
     margin: 0;
     padding: 0;
-    font-size: 10;
 }
 body{
-    font-family: "Varela Round", Arial, Helvetica, sans-serif;
-    display: flex;
-    align-items: center;
-}
-input[type=checkbox]{
- display: none;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 .container{
     background-image: linear-gradient(to right, #33ccff 0%, #ff99cc);
-    color: #ffffff;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .main{
     width: 50vw;
-    padding: 15px;
+    height: auto;
+    padding: 20px;
+    background-color: rgba(248, 248, 248, 0.781);
+    border-radius: 15px;
+    filter:drop-shadow(16px 0px 20px  rgb(189, 189, 189)) ;
+    transition: 0.2s;   
+}
+.main form{
     display: grid;
     gap: 15px;
-    border: 1px solid #ffffff;
-    top: 15%;
-    left: 35%;
-    position: absolute;
-    transition: 0.2s;
+}
+.main .title{
+    font-size: 20pt;
+    text-align: center;
+    border-bottom: 1px solid #a1a1a1;
+}
+.main .subtitle{
+    font-size: 17px;
+}
+.main label{
+    font-weight: bold;
+}
+.main .keyType input{
+    margin-left: 20px;
+}
+.main input[type=text]{
+    width: 90%;
+    height: 30px;
+    font-size: 15px;
+    padding-left: 10px;
+    margin-left: 20px;
+    border: 1px solid #a1a1a1;
+    border-radius: 5px;
+    outline: none;
 }
