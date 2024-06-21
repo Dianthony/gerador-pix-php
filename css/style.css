@@ -40,12 +40,18 @@ body{
 .main .keyType input{
     margin-left: 20px;
 }
-.main input[type=text]{
+.main input[type=text], .main input[type=email]{
     width: 90%;
     height: 30px;
     font-size: 15px;
     padding-left: 10px;
-    margin-left: 20px;
+    border: 1px solid #a1a1a1;
+    border-radius: 5px;
+    outline: none;
+}
+.main button{
+    height: 30px;
+    font-size: 15px;
     border: 1px solid #a1a1a1;
     border-radius: 5px;
     outline: none;
