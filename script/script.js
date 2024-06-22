@@ -10,7 +10,7 @@ function typeMask(){
         key.addEventListener("input", () => {
             // limpar caracteres não numéricos
             if(key.type === "text"){
-                const cleanField = key.value.replace(/\D/g, "").substring(0,16)
+                const cleanField = key.value.replace(/\D/g, "").substring(0,11)
                         
                 let numberArray = cleanField.split("");
     
@@ -45,7 +45,7 @@ function typeMask(){
             
             if(key.type === "text"){
                 // limpar caracteres não numéricos
-                const cleanField = key.value.replace(/\D/g, "").substring(0,14)
+                const cleanField = key.value.replace(/\D/g, "").substring(0,11)
                             
                 let numberArray = cleanField.split("");
 
@@ -70,6 +70,71 @@ function typeMask(){
          })
     }
     else if(mask.value == 4){
+        key.setAttribute('type','text')
+        
+         key.addEventListener("input", () => {
+            
+            if(key.type === "text"){
+                // limpar caracteres não numéricos
+                const cleanField = key.value.replace(/\D/g, "").substring(0,14)
+                            
+                let numberArray = cleanField.split("");
 
+                let numberFormat = "";
+
+                if(numberArray.length > 0){
+                    numberFormat += `${numberArray.slice(0,2).join("")}`
+                }
+                if(numberArray.length > 2){
+                    numberFormat += `.${numberArray.slice(2,5).join("")}`
+                }
+                if(numberArray.length > 5){
+                    numberFormat += `.${numberArray.slice(5,8).join("")}`
+                }
+                if(numberArray.length > 8){
+                    numberFormat += `/${numberArray.slice(8,12).join("")}`
+                }
+                if(numberArray.length > 12){
+                    numberFormat += `-${numberArray.slice(12,14).join("")}`
+                }
+
+                key.value = numberFormat;
+            }
+            else {}
+         })
+    }
+    else if(mask.value == 5){
+        key.setAttribute('type','text')
+        
+         key.addEventListener("input", () => {
+            
+            if(key.type === "text"){
+                // limpar caracteres não numéricos
+                const cleanField = key.value.replace(/[^a-zA-Z0-9]/g, "").substring(0,32)
+                            
+                let numberArray = cleanField.split("");
+
+                let numberFormat = "";
+
+                if(numberArray.length > 0){
+                    numberFormat += `${numberArray.slice(0,8).join("")}`
+                }
+                if(numberArray.length > 8){
+                    numberFormat += `-${numberArray.slice(8,12).join("")}`
+                }
+                if(numberArray.length > 12){
+                    numberFormat += `-${numberArray.slice(12,16).join("")}`
+                }
+                if(numberArray.length > 16){
+                    numberFormat += `-${numberArray.slice(16,20).join("")}`
+                }
+                if(numberArray.length > 20){
+                    numberFormat += `-${numberArray.slice(20,28).join("")}`
+                }
+
+                key.value = numberFormat;
+            }
+            else {}
+         })
     }
 }
