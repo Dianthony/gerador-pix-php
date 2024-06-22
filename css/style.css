@@ -14,7 +14,7 @@ body{
     justify-content: center;
 }
 .main{
-    width: 50vw;
+    width: auto;
     height: auto;
     padding: 20px;
     background-color: rgba(248, 248, 248, 0.781);
@@ -41,7 +41,7 @@ body{
     margin-left: 20px;
 }
 .main input[type=text], .main input[type=email]{
-    width: 90%;
+    width: 97%;
     height: 30px;
     font-size: 15px;
     padding-left: 10px;
