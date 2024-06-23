@@ -32,15 +32,15 @@
                         </div>
                         <div class="nameTransfer">
                             <label for="nameTransfer"> Nome do Beneficiário (até 25 letras)</label>
-                            <input type="text" id="nameTransfer" name="nameTransfer" required>
+                            <input type="text" id="nameTransfer" name="nameTransfer" maxlength="25" required>
                         </div>
                         <div class="cityTransfer">
                             <label for="cityTransfer"> Cidade (Até 15 letras)</label>
-                            <input type="text" id="cityTransfer" name="cityTransfer" required>
+                            <input type="text" id="cityTransfer" name="cityTransfer" maxlength="15" required>
                         </div>
                         <div class="valueTransfer">
                             <label for="valueTransfer"> Valor (opcional)</label>
-                            <input type="text" id="valueTransfer" name="valueTransfer" placeholder="0,00">
+                            <input type="text" id="valueTransfer" name="valueTransfer" oninput="mascaraMoeda(event);" placeholder="R$ 0,00">
                         </div>
                         <div class="idTransfer">
                             <label for="id"> Identificador (opcional)</label>
