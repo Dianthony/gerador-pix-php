@@ -50,9 +50,12 @@ body{
     outline: none;
 }
 .main button{
+    background-color: #28af51;
+    color: white;
     height: 30px;
     font-size: 15px;
-    border: 1px solid #a1a1a1;
+    border: none;
     border-radius: 5px;
     outline: none;
+    cursor: pointer;
 }
