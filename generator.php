@@ -11,14 +11,13 @@
     $typeKey = $_POST['keytype'];
 
     if($typeKey == 1){
-        $newKeyPix = "+55".$keyPix;
-        $newValue = explode(" ", $valuePix);
+        $remove = array("(", ")", "-", " ", ".", "R", "$",);
+        $broken = str_replace($remove, "", $keyPix);
+        $brokenValue = str_replace($remove, "", $valuePix);
+        $newKeyPix = "+55".$broken;
 
-        echo $valuePix;
-        echo $newValue[0];
-
-        function formataCampo($id, $valuePix){
-            return $id . str_pad(strlen($valuePix), 2, '0', STR_PAD_LEFT) . $valuePix;
+        function formataCampo($id, $brokenValue){
+            return $id . str_pad(strlen($brokenValue), 2, '0', STR_PAD_LEFT) . $brokenValue;
         }
     
         function calculaCRC16($dados){
@@ -38,13 +37,13 @@
             return strtoupper(str_pad(dechex($resultado), 4, '0', STR_PAD_LEFT));
         }
     
-        function geraPix($newKeyPix, $idTx = '', $valuePix = 0.00){
+        function geraPix($newKeyPix, $idTx = '', $brokenValue = 0.00){
             $resultado = "000201";
             $resultado .= formataCampo("26", "0014br.gov.bcb.pix" . formataCampo("01", $newKeyPix));
             $resultado .= "52040000";
             $resultado .= "5303986";
-            if($valuePix > 0){
-                $resultado .= formataCampo("54", number_format($valuePix, 2, '.', ''));
+            if($brokenValue > 0){
+                $resultado .= formataCampo("54", number_format($brokenValue, 2, '.', ''));
             }
             $resultado .= "5802BR";
             $resultado .= "5901N";
@@ -55,7 +54,7 @@
             return $resultado;
         }
     
-        $codigoPix = geraPix($newKeyPix, $idPix, $valuePix);
+        $codigoPix = geraPix($newKeyPix, $idPix, $brokenValue);
     
         echo '<p><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' . urlencode($codigoPix) . '"></p>
                                <p>Código PIX: '. $codigoPix .'</p>';
