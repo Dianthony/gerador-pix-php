@@ -49,14 +49,18 @@
                     
                         <button type="submit"> Gerar Pix </button>
                     </form>
+                </div><br>
+                <div class="qrcode">
+                    
+                    <?php
+                    if (isset($_SESSION['qrcode'])) {
+                        echo $_SESSION['qrcode'];
+                        unset($_SESSION['qrcode']);
+                    } else {
+                        echo "AQUI VEM O QR CODE";
+                    }
+                    ?>
                 </div>
-
-                <?php
-                if (isset($_SESSION['qrcode'])) {
-                    echo $_SESSION['qrcode'];
-                    unset($_SESSION['qrcode']);
-                }
-                ?>
         </div>
     </body>
 </html>

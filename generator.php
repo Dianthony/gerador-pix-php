@@ -1,3 +1,4 @@
+<script type="text/javascript" src="script/script.js"></script>
 <?php
 
     session_start();
@@ -64,8 +65,15 @@
     
         $codigoPix = geraPix($newKeyPix, $idPix, $brokenValue);
     
-        $_SESSION['qrcode'] = '<p><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' . urlencode($codigoPix) . '"></p>
-                               <p>Código PIX: '. $codigoPix .'</p>';
+        $_SESSION['qrcode'] = '
+            <section id="qrcode-placa"><h2>Placa Pix</h2></section><hr>
+            <div class="session-qrcode"><img id="my-node" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' . urlencode($codigoPix) . '"></div>
+            <div class="session-keypix"><strong>Chave Pix:</strong> '.$keyPix.'</div>
+            <div class="session-namepix"><strong>Nome:</strong> '.$namePix.'</div>
+            <div class="session-typepix"><strong>Tipo de Chave:</strong> Telefone </div>
+            <div class="session-copy"><textarea readonly>'. $codigoPix .'</textarea> </div>
+            <div class="session-btns"><button type="button"> Copiar Código </button>
+            <button type="button" id="btn"> Baixar QR Code </button></div>';
     }
 
     else if($typeKey == 2){
@@ -111,8 +119,10 @@
     
         $codigoPix = geraPix($keyPix, $idPix, $brokenValue);
     
-        $_SESSION['qrcode'] = '<p><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' . urlencode($codigoPix) . '"></p>
-                               <p>Código PIX: '. $codigoPix .'</p>';
+        $_SESSION['qrcode'] = '
+            <p><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' . urlencode($codigoPix) . '"></p>
+            <input type="text" value="'. $codigoPix .'"><br>
+            <button type="button"> Copiar Código </button> <button type="button"> Baxiar QR Code </button>';
     }
     else if($typeKey >= 3){
 
@@ -160,7 +170,7 @@
         $codigoPix = geraPix($newKeyPix, $idPix, $brokenValue);
     
         $_SESSION['qrcode'] = '<p><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' . urlencode($codigoPix) . '"></p>
-                               <p>Código PIX: '. $codigoPix .'</p>';
+                               <input type="text" value="'. $codigoPix .'">';
     }
-    header("Location: index.php");
+    header("Location: index.php#qrcode-placa");
 ?>
