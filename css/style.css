@@ -4,16 +4,17 @@
 }
 body{
     font-family: "Inter", Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
 }
 .container{
     background-image: linear-gradient(to right, #33ccff 0%, #ff99cc);
     width: 100vw;
-    height: 100vh;
-    display: flex;
+    height: 100%;
+    display: grid;
     align-items: center;
     justify-content: center;
 }
-.main{
+.main, .qrcode{
     width: auto;
     height: auto;
     padding: 20px;
@@ -58,4 +59,28 @@ body{
     border-radius: 5px;
     outline: none;
     cursor: pointer;
+}
+.qrcode{
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.qrcode .session-qrcode{
+    background-color: #fff;
+    width: 275px;
+    height: 275px;
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.qrcode .session-copy textarea{
+    width: 100%;
+    height: 60px;
+    resize: none;
+}
+.qrcode .session-btns{
+    display: flex;
+    justify-content:space-between;
 }
