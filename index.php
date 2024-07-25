@@ -9,7 +9,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
         <script type="text/javascript" src="script/script.js"></script>
+        <script type="text/javascript" src="script/copy.js"></script>
+        <script type="text/javascript" src="script/download.js"></script>
     </head>
     <body>
         <div class="container">
@@ -60,6 +63,7 @@
                         echo "AQUI VEM O QR CODE";
                     }
                     ?>
+                    <div id="here-appear-theimages"></div>
                 </div>
         </div>
     </body>

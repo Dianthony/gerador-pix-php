@@ -67,13 +67,13 @@
     
         $_SESSION['qrcode'] = '
             <section id="qrcode-placa"><h2>Placa Pix</h2></section><hr>
-            <div class="session-qrcode"><img id="my-node" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' . urlencode($codigoPix) . '"></div>
+            <div class="session-qrcode" id="my-node"><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' . urlencode($codigoPix) . '"></div>
             <div class="session-keypix"><strong>Chave Pix:</strong> '.$keyPix.'</div>
             <div class="session-namepix"><strong>Nome:</strong> '.$namePix.'</div>
             <div class="session-typepix"><strong>Tipo de Chave:</strong> Telefone </div>
-            <div class="session-copy"><textarea readonly>'. $codigoPix .'</textarea> </div>
-            <div class="session-btns"><button type="button"> Copiar Código </button>
-            <button type="button" id="btn"> Baixar QR Code </button></div>';
+            <div class="session-copy"><textarea id="copyandpaste" readonly>'. $codigoPix .'</textarea> </div>
+            <div class="session-btns"><button type="button" id="copy"> Copiar Código </button>
+            <button type="button" id="download"> Baixar QR Code </button></div>';
     }
 
     else if($typeKey == 2){
