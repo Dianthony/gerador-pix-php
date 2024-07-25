@@ -120,3 +120,5 @@ const maskCurrency = (valor, locale = 'pt-BR', currency = 'BRL') => {
       currency
     }).format(valor)
   }
+
+ 
