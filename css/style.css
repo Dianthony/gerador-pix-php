@@ -8,27 +8,48 @@ body{
 }
 .container{
     background-image: linear-gradient(to right, #33ccff 0%, #ff99cc);
-    width: 100vw;
+    background-position: center;
+    width: 100%;
     height: 100%;
     display: grid;
     align-items: center;
     justify-content: center;
+    gap: 5px;
 }
-.main, .qrcode{
-    width: auto;
+
+.warnings, .main, .qrcode{
+    width: 400px;
     height: auto;
     padding: 20px;
+    margin-top: 10px;
     background-color: rgba(248, 248, 248, 0.781);
     border-radius: 15px;
     filter:drop-shadow(16px 0px 20px  rgb(189, 189, 189)) ;
     transition: 0.2s;   
+}
+.warnings .warnings-github a{
+    width:180px;
+    padding: 3px;
+    gap: 2px;
+    text-decoration: none; 
+    font-size: 12px;
+    color: #000000;
+    background-color: #dadada;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.warnings .warnings-github a i{
+    font-size: 20px;
+    color: #000000;
 }
 .main form{
     display: grid;
     gap: 15px;
 }
 .main .title{
-    font-size: 20pt;
+    font-size: 20px;
     text-align: center;
     border-bottom: 1px solid #a1a1a1;
 }
@@ -60,11 +81,18 @@ body{
     outline: none;
     cursor: pointer;
 }
+
 .qrcode{
     display: grid;
     gap: 10px;
     align-items: center;
     justify-content: center;
+}
+.qrcode .no-qrcode{
+    text-align: center;
+}
+.qrcode .no-qrcode i{
+    font-size: 30px;
 }
 .qrcode .session-qrcode{
     background-color: #fff;
@@ -77,10 +105,34 @@ body{
 }
 .qrcode .session-copy textarea{
     width: 100%;
-    height: 60px;
+    height: 62px;
+    background-color: transparent;
+    border: none;
+    text-align: center;
     resize: none;
+    outline: none;
+    text-decoration: none;
+}
+.qrcode .session-copy textarea::-webkit-scrollbar{
+    display: none;
 }
 .qrcode .session-btns{
+    width: 100%;
     display: flex;
     justify-content:space-between;
+}
+
+.qrcode .session-btns button{
+    border: #686868 1px dashed;
+    height: 30px;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+.info{
+    font-size: 12px;
+    text-align: center;
+    color: #a1a1a1;
 }
