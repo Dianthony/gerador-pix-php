@@ -25,7 +25,7 @@
                         <p>- Nos isentamos de qualquer erro de sistema e ou possíveis erros na geração do Qr Code. Confira os dados.</p>
                     </div>
                     <div class="warnings-github">Você pode acessar o código fonte em:<br> 
-                        <a href="https://github.com/Dianthony/gerador-pix-php" >
+                        <a href="https://github.com/Dianthony/gerador-pix-php" target="_blank" rel="noopener noreferrer" >
                             <i class="fa-brands fa-square-github"></i> Dianthony/gerador-pix-php</a>
                     </div>
                 </div>
