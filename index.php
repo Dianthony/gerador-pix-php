@@ -10,12 +10,25 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+        <script src="https://kit.fontawesome.com/beafde8cd0.js" crossorigin="anonymous"></script>
         <script type="text/javascript" src="script/script.js"></script>
         <script type="text/javascript" src="script/copy.js"></script>
         <script type="text/javascript" src="script/download.js"></script>
     </head>
     <body>
         <div class="container">
+                <div class="warnings">
+                    <div class="warnings-title"><h3><i class="fa-solid fa-triangle-exclamation"></i> Atenção</h3></div>
+                    <hr>
+                    <div class="warnings-main">
+                        <p>- Não faça o pix sem antes conferir se os dados estão completamente corretos.</p>
+                        <p>- Nos isentamos de qualquer erro de sistema e ou possíveis erros na geração do Qr Code. Confira os dados.</p>
+                    </div>
+                    <div class="warnings-github">Você pode acessar o código fonte em:<br> 
+                        <a href="https://github.com/Dianthony/gerador-pix-php" >
+                            <i class="fa-brands fa-square-github"></i> Dianthony/gerador-pix-php</a>
+                    </div>
+                </div>
                 <div class="main">
                     <form method="post" action="generator.php">
                         <div class="title"><h3>Gerador QR Code PIX</h3></div>
@@ -52,7 +65,7 @@
                     
                         <button type="submit"> Gerar Pix </button>
                     </form>
-                </div><br>
+                </div>
                 <div class="qrcode">
                     
                     <?php
@@ -60,10 +73,20 @@
                         echo $_SESSION['qrcode'];
                         unset($_SESSION['qrcode']);
                     } else {
-                        echo "AQUI VEM O QR CODE";
+                    ?>
+                        <div class="no-qrcode">
+                            <i class="fa-solid fa-qrcode"></i><br>
+                            Preencha o formulário e seu Qr Code aparecerá aqui.
+                        </div>
+                        
+                    <?php
                     }
                     ?>
+                    <hr>
                     <div id="here-appear-theimages"></div>
+                    <div class="info">
+                            Developed by Dianthony Alves
+                    </div>
                 </div>
         </div>
     </body>
