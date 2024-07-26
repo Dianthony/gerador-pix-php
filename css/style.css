@@ -14,14 +14,15 @@ body{
     display: grid;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 15px;
+    padding-top:15px;
+    padding-bottom:15px;
 }
 
 .warnings, .main, .qrcode{
     width: 400px;
     height: auto;
     padding: 20px;
-    margin-top: 10px;
     background-color: rgba(248, 248, 248, 0.781);
     border-radius: 15px;
     filter:drop-shadow(16px 0px 20px  rgb(189, 189, 189)) ;
@@ -135,4 +136,12 @@ body{
     font-size: 12px;
     text-align: center;
     color: #a1a1a1;
+}
+@media (max-width:800px){
+    .container{
+        width:100vw;
+    }
+    .warnings, .main, .qrcode{
+    width: 85vw;
+    }
 }
